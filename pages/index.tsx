@@ -1,6 +1,6 @@
 import BlogPostCard from "@/components/BlogPostCard"
 import { createClient } from "contentful"
-import { BlogPostsProps } from "./types"
+import { BlogPostsProps } from "@/types"
 
 export async function getStaticProps(){
     const client = createClient({
