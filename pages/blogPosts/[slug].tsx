@@ -32,17 +32,18 @@ return {
 
 //TODO: change to the right prop type.
 export default function BlogDetails({blogPost}: any){
-    const {featuredImage, materialsAndTools, method, title} = blogPost.fields
+    const {featuredImage, materialsAndTools, method, title, thumbnail} = blogPost.fields
     console.log(blogPost)
  
     return(
         <div>
             <div>
-                <Image alt={title}
-                src={'https://' + featuredImage.fields.file.url}
-                width={500}
-                height={500}
-/>
+            <Image 
+            src={'https:' + thumbnail.fields.file.url}
+            width={500}
+            height={500}
+            alt="blog post"
+            />
                 <h2>{title}</h2>
             </div>
             <div >
