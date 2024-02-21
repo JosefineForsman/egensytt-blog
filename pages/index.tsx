@@ -1,5 +1,6 @@
-
+import BlogPostCard from "@/components/BlogPostCard"
 import { createClient } from "contentful"
+import { BlogPostsProps } from "./types"
 
 export async function getStaticProps(){
     const client = createClient({
@@ -15,11 +16,13 @@ export async function getStaticProps(){
         }
     }
 }
-export default function BlogPosts({ blogPosts }: any){
+export default function BlogPosts({ blogPosts }: BlogPostsProps){
     console.log(blogPosts)
     return(
         <div className="blog-posts-list">
-            Blogpost list
+            { blogPosts.map(post => (
+                <BlogPostCard key={post.sys.id} blogPosts={post}/>
+            ))}
         </div>
     )
 }
