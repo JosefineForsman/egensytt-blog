@@ -1,20 +1,11 @@
 import Link from 'next/link'
 import Navbar from './Navbar'
+import Header from './Header'
 
 export default function Layout({ children }:any) {
   return (
     <div className="layout">
-      <Navbar />
-      <header>
-        <Link href="/">
-            <h1>
-              <span>Just Add</span>
-              <span>Some Blog Posts</span>
-            </h1>
-            <h2>Spread The Joy</h2>
-        </Link>
-      </header>
-
+      <Header/>
       <div className="page-content">
         { children }
       </div>
