@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navbar from './Navbar'
 import Header from './Header'
+import { Box } from '@mui/material'
 
 export default function Layout({ children }:any) {
   return (

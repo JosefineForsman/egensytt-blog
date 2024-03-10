@@ -34,22 +34,22 @@ export async function getStaticProps({ params }: any) {
 }
 
 export default function BlogDetails({ blogPost }: any) {
-    const { featuredImage, materialsAndTools, method, title, thumbnail } = blogPost.fields;
+    const { featuredImage, materialsAndTools, method, title, thumbnail} = blogPost.fields;
 
     return (
-        <Container maxWidth="md">
+        <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}maxWidth="md">
             <Box my={4}>
-                <Paper elevation={3} sx={{ padding:   2 }}>
+                <Box  sx={{ padding:   2 }}>
                     <Box display="flex" flexDirection="column" alignItems="center">
+                    <Typography variant="h4" gutterBottom>
+                            {title}
+                        </Typography>
                         <Image   
                             src={'https:' + thumbnail.fields.file.url}
                             width={500}
                             height={500}
                             alt="blog post"
                         />
-                        <Typography variant="h2" gutterBottom>
-                            {title}
-                        </Typography>
                     </Box>
                     <Typography variant="h5" gutterBottom>
                         Du behöver:
@@ -62,7 +62,7 @@ export default function BlogDetails({ blogPost }: any) {
                     <Typography variant="body1" gutterBottom>
                         {documentToReactComponents(method)}
                     </Typography>
-                </Paper>
+                </Box>
             </Box>
         </Container>
     );

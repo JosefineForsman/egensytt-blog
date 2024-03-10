@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-
 body {
   margin: 0;
   font-family: 'Abril Fatface';
@@ -28,4 +27,11 @@ footer {
   padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
+}
+.blog-posts-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: hotpink; */
 }
