@@ -41,7 +41,7 @@ const Navbar = () => {
       aria-label="nav tabs example"
       sx={{ fontFamily: "Poppins" }}
     >
-      <Tab label="Om Minifix" value="/about"/>
+      <Tab label="Om Egensytt" value="/about"/>
       <Tab label="Bloggen" value="/" />
       <Tab label="Kontakt" value="/contact" />
       <Tab label="Kategorier" value="/categories" />
