@@ -1,8 +1,8 @@
 function Contact() {
     return (
       <div>
-        <h1>Contact us</h1>
-        <p>This is the Contact page.</p>
+        <h1>Kontakt</h1>
+        <p>Detta är kontakt sidan.</p>
       </div>
     )
   }
