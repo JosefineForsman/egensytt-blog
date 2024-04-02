@@ -13,6 +13,8 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/router';
 import ButtonBase from '@mui/material/ButtonBase';
+import logo from '../public/egensytt-logo.svg'
+import Image from 'next/image';
 
 const Navbar = () => {
   const router = useRouter();
@@ -32,50 +34,59 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar color="default" sx={{ display: "flex", alignItems: "center" }}>
-    <Toolbar sx={{ justifyContent: 'space-between' }}>
-  {!isMobile && (
-    <Tabs
-      value={value}
-      onChange={handleChange}
-      aria-label="nav tabs example"
-      sx={{ fontFamily: "Poppins" }}
-    >
-      <Tab label="Om Egensytt" value="/about"/>
-      <Tab label="Bloggen" value="/" />
-      <Tab label="Kontakt" value="/contact" />
-      <Tab label="Kategorier" value="/categories" />
-    </Tabs>
-  )}
-  {isMobile && (
-    <IconButton
-      edge="end"
-      color="inherit"
-      aria-label="menu"
-      onClick={handleDrawerToggle}
-    >
-      <MenuIcon />
-    </IconButton>
-  )}
-</Toolbar>
+    <AppBar sx={{ display: "flex", alignItems: "center", width: "100%", bgcolor:"#EEEEEE" }}>
+    <Toolbar sx={{ justifyContent: 'space-between', width:"100%"}}>
+      {!isMobile && <Image  alt="logo" src={logo} ></Image>}
+      {!isMobile && (
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="nav tabs "
+          sx={{ fontFamily: "Poppins"}}
+        >
+          <Tab label="Om Egensytt" value="/about"/>
+          <Tab label="Bloggen" value="/" />
+          <Tab label="Kontakt" value="/contact" />
+          <Tab label="Kategorier" value="/categories" />
+        </Tabs>
+      )}
+      {isMobile && (
+        <IconButton
+          aria-label="menu"
+          onClick={handleDrawerToggle}
+          sx={{width:"100%", display:"flex", justifyContent:"flex-end"}}
+        >
+          <MenuIcon sx={{color:"#151864", display:"flex", alignItems:"right", marginRight:"14px"}}/>
+        </IconButton>
+      )}
+    </Toolbar>
       <Drawer
         open={drawerOpen}
         onClose={handleDrawerToggle}
         variant="temporary"
         anchor="right"
+        PaperProps={{ 
+          style: { 
+            width: '100%', 
+            height: '100%', 
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          } 
+        }}
       >
-        <List>
+        <List sx={{color: "#151864"}}>
           <ListItem component={ButtonBase} onClick={() => handleChange(null, "/about")}>
-            <ListItemText primary="Om Minifix" />
+            <ListItemText primary="Om Egensytt" sx={{textTransform:"uppercase"}}/>
           </ListItem>
           <ListItem component={ButtonBase} onClick={() => handleChange(null, "/")}>
-            <ListItemText primary="Bloggen" />
+            <ListItemText primary="Bloggen" sx={{textTransform:"uppercase"}} />
           </ListItem>
           <ListItem component={ButtonBase} onClick={() => handleChange(null, "/contact")}>
-            <ListItemText primary="Kontakt" />
+            <ListItemText primary="Kontakt" sx={{textTransform:"uppercase"}}/>
           </ListItem>
           <ListItem component={ButtonBase} onClick={() => handleChange(null, "/categories")}>
-            <ListItemText primary="Kategorier" />
+            <ListItemText primary="Kategorier" sx={{textTransform:"uppercase"}} />
           </ListItem>
         </List>
       </Drawer>

@@ -11,11 +11,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color:#82573A;
+  color:#151864;
+  background-color: #EEEEEE;
 }
 footer {
-  background: #111;
-  background-color: #82573A;
+  background-color: #151864;
   color:white;
   padding: 40px;
   text-align: center;

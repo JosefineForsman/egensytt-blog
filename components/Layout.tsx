@@ -12,7 +12,7 @@ export default function Layout({ children }:any) {
       </div>
 
       <footer>
-        <p>Copyright 2024 Minifix</p>
+        <p>Copyright 2024 Egensytt</p>
       </footer>
     </div>
   )

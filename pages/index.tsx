@@ -20,6 +20,7 @@ export default function BlogPosts({ blogPosts }: BlogPostsProps){
     console.log(blogPosts)
     return(
         <div className="blog-posts-list">
+             <h1>Blogg</h1>
             { blogPosts.map(post => (
                 <BlogPostCard key={post.sys.id} blogPosts={post}/>
             ))}
