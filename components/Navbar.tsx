@@ -13,6 +13,8 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/router';
 import ButtonBase from '@mui/material/ButtonBase';
+import logo from '../public/egensytt-logo.svg'
+import Image from 'next/image';
 
 const Navbar = () => {
   const router = useRouter();
@@ -32,13 +34,14 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar color="default" sx={{ display: "flex", alignItems: "center" }}>
-    <Toolbar sx={{ justifyContent: 'space-between' }}>
+    <AppBar sx={{ display: "flex", alignItems: "center", width: "100%", bgcolor:"#EEEEEE" }}>
+    <Toolbar sx={{ justifyContent: 'space-between', width:"100%"}}>
+      <Image  alt="logo" src={logo} ></Image>
   {!isMobile && (
     <Tabs
       value={value}
       onChange={handleChange}
-      aria-label="nav tabs example"
+      aria-label="nav tabs "
       sx={{ fontFamily: "Poppins" }}
     >
       <Tab label="Om Egensytt" value="/about"/>
