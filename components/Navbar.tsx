@@ -44,10 +44,10 @@ const Navbar = () => {
           aria-label="nav tabs "
           sx={{ fontFamily: "Poppins"}}
         >
-          <Tab label="Om Egensytt" value="/about"/>
-          <Tab label="Bloggen" value="/" />
-          <Tab label="Kontakt" value="/contact" />
-          <Tab label="Kategorier" value="/categories" />
+          <Tab label="Om Egensytt" value="/about" sx={{color:"#151864", fontSize:"18px"}}/>
+          <Tab label="Bloggen" value="/" sx={{color:"#151864", fontSize:"18px"}} />
+          <Tab label="Kontakt" value="/contact" sx={{color:"#151864", fontSize:"18px"}}/>
+          <Tab label="Kategorier" value="/categories" sx={{color:"#151864", fontSize:"18px"}} />
         </Tabs>
       )}
       {isMobile && (

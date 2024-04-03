@@ -28,10 +28,3 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
-.blog-posts-list{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* background-color: hotpink; */
-}

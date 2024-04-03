@@ -7,19 +7,18 @@ export default function BlogPostCard({ blogPosts }: any) {
     const { slug, materialsAndTools, thumbnail, title } = blogPosts.fields;
 
     return (
-        <Card sx={{ maxWidth:  800, marginBottom:  2 }}>
+        <Card sx={{ maxWidth: 382, marginBottom:  2, marginLeft:"30px" }}>
             <CardMedia
                 component="img"
-                height="fit-content"
+                height="350px"
                 image={'https:' + thumbnail.fields.file.url}
                 alt="blog post"
+                object-fit= "cover"
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography sx={{fontSize:"14px", textTransform:"uppercase", color:"rgba(0, 0, 0, 0.31)", fontWeight:"500"}}>Barnkläder  -   Nov 17  2023</Typography>
+                <Typography sx={{color:"#151864", fontSize:"24px", fontWeight:"bold"}}>
                     {title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Verktyg och material: {materialsAndTools.join(', ')}
                 </Typography>
             </CardContent>
             <CardActions>
