@@ -7,7 +7,7 @@ export default function BlogPostCard({ blogPosts }: any) {
     const { slug, materialsAndTools, thumbnail, title } = blogPosts.fields;
 
     return (
-        <Card sx={{ maxWidth: 382, marginBottom:  2, marginLeft:"30px" }}>
+        <Card sx={{ maxWidth: 382, marginBottom: 2, marginLeft: { xs: "30px", sm: "0px" } }}>
             <CardMedia
                 component="img"
                 height="350px"
