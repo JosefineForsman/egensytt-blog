@@ -1,12 +1,17 @@
 import { Container, Box } from '@mui/material'
+import SearchBar from '@/components/SearchBar'
 export default function About() {
     return (
-      <Container sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+      <Box sx={{display:"flex", flexDirection:"column"}}>
+        <Box sx={{display:"flex", justifyContent:"left", width:"100%" }}>
+        <SearchBar />
+
+        </Box>
+        <Box sx={{display:"flex", width:"100%", justifyContent:"center", alignItems:"center",flexDirection:"column"}}>
         <h1>Om Egensytt</h1>
-        <Box sx={{display:"flex", }}>
         <p>Detta är om Egensytt sidan.</p>
 
         </Box>
-      </Container>
+      </Box>
     )
   }
