@@ -1,20 +1,20 @@
 export type BlogPost = {
-    sys: {
-      id: string;
-    };
-    fields: {
-      slug: string;
-      materialsAndTools: string[];
-      thumbnail: {
-        fields: {
-          file: {
-            url: string;
-          };
+  sys: {
+    id: string;
+  };
+  fields: {
+    slug: string;
+    materialsAndTools: string[];
+    thumbnail: {
+      fields: {
+        file: {
+          url: string;
         };
       };
-      title: string;
     };
+    title: string;
   };
-  export type BlogPostsProps = {
-    blogPosts: BlogPost[];
-  };
+};
+export type BlogPostsProps = {
+  blogPosts: BlogPost[];
+};
