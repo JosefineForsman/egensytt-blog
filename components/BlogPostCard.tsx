@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { format } from "date-fns";
+import { sv } from "date-fns/locale";
+
 import {
   Card,
   CardContent,
@@ -12,6 +15,18 @@ import {
 
 export default function BlogPostCard({ blogPosts }: any) {
   const { slug, materialsAndTools, thumbnail, title } = blogPosts.fields;
+  const { createdAt } = blogPosts.sys;
+
+  console.log("createdAt:", createdAt);
+
+  let date = "";
+  if (createdAt) {
+    try {
+      date = format(new Date(createdAt), "PP", { locale: sv });
+    } catch (error) {
+      console.error("Invalid date:", createdAt);
+    }
+  }
 
   return (
     <Card
@@ -32,10 +47,10 @@ export default function BlogPostCard({ blogPosts }: any) {
           sx={{
             fontSize: "14px",
             textTransform: "uppercase",
-            color: "rgba(0, 0, 0, 0.31)",
+            color: "rgba(0, 0, 0, 0.28)",
             fontWeight: "500",
           }}>
-          Barnkläder - Nov 17 2023
+          {date}
         </Typography>
         <Typography
           sx={{ color: "#151864", fontSize: "24px", fontWeight: "bold" }}>
