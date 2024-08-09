@@ -1,5 +1,5 @@
 import BlogPostCard from "@/components/BlogPostCard";
-import { Box, Typography } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import { createClient } from "contentful";
 import { BlogPostsProps } from "@/types";
 
@@ -20,23 +20,25 @@ export async function getStaticProps() {
 export default function BlogPosts({ blogPosts }: BlogPostsProps) {
   console.log(blogPosts);
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Box>
-        <Typography
-          sx={{
-            color: "#151864",
-            fontSize: "24px",
-            fontWeight: "bold",
-            margin: "30px",
-          }}>
-          Senaste blogg inläggen
-        </Typography>
+    <>
+      <Typography
+        sx={{
+          color: "#151864",
+          fontSize: "24px",
+          fontWeight: "bold",
+          margin: "30px",
+        }}>
+        Senaste blogg inläggen
+      </Typography>
+      <Box display="flex" justifyContent="flex-end">
+        <Grid container spacing={3} sx={{ maxWidth: 1000 }}>
+          {blogPosts.map((post) => (
+            <Grid item xs={12} sm={6} md={4} key={post.sys.id}>
+              <BlogPostCard blogPosts={post} />
+            </Grid>
+          ))}
+        </Grid>
       </Box>
-      <Box sx={{ display: "flex" }}>
-        {blogPosts.map((post) => (
-          <BlogPostCard key={post.sys.id} blogPosts={post} />
-        ))}
-      </Box>
-    </Box>
+    </>
   );
 }
