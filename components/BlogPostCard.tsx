@@ -11,6 +11,8 @@ import {
   Typography,
   CardActions,
   Button,
+  Box,
+  Grid,
 } from "@mui/material";
 
 export default function BlogPostCard({ blogPosts }: any) {
@@ -29,41 +31,51 @@ export default function BlogPostCard({ blogPosts }: any) {
   }
 
   return (
-    <Card
-      sx={{
-        maxWidth: 382,
-        marginBottom: 2,
-        marginLeft: { xs: "30px", sm: "0px" },
-      }}>
-      <CardMedia
-        component="img"
-        height="350px"
-        image={"https:" + thumbnail.fields.file.url}
-        alt="blog post"
-        object-fit="cover"
-      />
-      <CardContent>
-        <Typography
+    <Grid item>
+      <Box display="flex" justifyContent="center">
+        <Card
           sx={{
-            fontSize: "14px",
-            textTransform: "uppercase",
-            color: "rgba(0, 0, 0, 0.28)",
-            fontWeight: "500",
+            width: { xs: "90%", sm: "100%", md: "100%" },
+            maxWidth: "none",
+            marginBottom: 2,
           }}>
-          {date}
-        </Typography>
-        <Typography
-          sx={{ color: "#151864", fontSize: "24px", fontWeight: "bold" }}>
-          {title}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link href={`/blogPosts/${slug}`}>
-          <Button size="small" color="primary">
-            Läs mer
-          </Button>
-        </Link>
-      </CardActions>
-    </Card>
+          <CardMedia
+            component="img"
+            height="350px"
+            image={"https:" + thumbnail.fields.file.url}
+            alt="blog post"
+            object-fit="cover"
+          />
+          <CardContent>
+            <Typography
+              sx={{
+                fontSize: "14px",
+                textTransform: "uppercase",
+                color: "rgba(0, 0, 0, 0.28)",
+                fontWeight: "500",
+              }}>
+              {date}
+            </Typography>
+            <Box height={50}>
+              <Typography
+                sx={{
+                  color: "#151864",
+                  fontSize: { xs: "18px", sm: "20px", md: "24px" },
+                  fontWeight: "bold",
+                }}>
+                {title}
+              </Typography>
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Link href={`/blogPosts/${slug}`}>
+              <Button size="small" color="primary">
+                Läs mer
+              </Button>
+            </Link>
+          </CardActions>
+        </Card>
+      </Box>
+    </Grid>
   );
 }
