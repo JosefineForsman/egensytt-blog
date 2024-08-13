@@ -18,3 +18,11 @@ export type BlogPost = {
 export type BlogPostsProps = {
   blogPosts: BlogPost[];
 };
+export type Post = {
+  id: string;
+  caption: string;
+  media_type: string;
+  media_url: string;
+  thumbnail_url: string;
+  permalink: string;
+};
