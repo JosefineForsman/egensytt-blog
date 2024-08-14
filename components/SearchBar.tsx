@@ -3,11 +3,11 @@ import SearchIcon from "@mui/icons-material/Search";
 
 const SearchBar = () => {
   return (
-    <Box marginTop={5}>
+    <Box sx={{ position: "absolute", top: -70, left: 0 }}>
       <TextField
         variant="outlined"
-        placeholder="Search"
-        sx={{ width: "400px" }}
+        placeholder="Sök..."
+        sx={{ width: "280px" }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

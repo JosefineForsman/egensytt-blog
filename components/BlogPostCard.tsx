@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { format } from "date-fns";
 import { sv } from "date-fns/locale";
+import { BlogPost } from "@/types";
 
 import {
   Card,
@@ -15,7 +15,7 @@ import {
   Grid,
 } from "@mui/material";
 
-export default function BlogPostCard({ blogPosts }: any) {
+export default function BlogPostCard({ blogPosts }: { blogPosts: BlogPost }) {
   const { slug, materialsAndTools, thumbnail, title } = blogPosts.fields;
   const { createdAt } = blogPosts.sys;
 

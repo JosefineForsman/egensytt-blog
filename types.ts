@@ -1,6 +1,7 @@
 export type BlogPost = {
   sys: {
     id: string;
+    createdAt: string;
   };
   fields: {
     slug: string;
@@ -13,6 +14,14 @@ export type BlogPost = {
       };
     };
     title: string;
+    excerpt: string;
+    metadata: {
+      tags: Array<{
+        sys: {
+          id: string;
+        };
+      }>;
+    };
   };
 };
 export type BlogPostsProps = {
