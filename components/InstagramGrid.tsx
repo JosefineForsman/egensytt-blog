@@ -26,9 +26,10 @@ const InstagramGrid = () => {
   }, []);
 
   return (
-    <Box
-      sx={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-      <Typography variant="h6" sx={{ fontWeight: "bold", margin: "30px" }}>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Typography
+        variant="h6"
+        sx={{ fontWeight: "bold", marginTop: 2, marginBottom: 2 }}>
         Instagram
       </Typography>
       <Box
@@ -44,19 +45,33 @@ const InstagramGrid = () => {
                 <CardActionArea
                   onClick={() => window.open(post.permalink, "_blank")}>
                   <Box sx={{ paddingTop: "100%" }}>
-                    <CardMedia
-                      component="img"
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                      image={post.thumbnail_url}
-                      alt={post.caption}
-                    />
+                    {post.media_type === "VIDEO" ? (
+                      <video
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        src={post.media_url}
+                      />
+                    ) : (
+                      <CardMedia
+                        component="img"
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        image={post.media_url}
+                        alt={post.caption}
+                      />
+                    )}
                   </Box>
                 </CardActionArea>
               </Card>

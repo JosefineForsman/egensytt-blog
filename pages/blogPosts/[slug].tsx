@@ -11,7 +11,6 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import BlogPosts from "..";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Grid, CardMedia } from "@mui/material";
 
